@@ -155,8 +155,6 @@
  }
 
  #content {
-     position: relative;
-     width: calc(100% - 280px);
      left: 280px;
      transition: .3s ease;
  }
@@ -169,7 +167,6 @@
      align-items: center;
      grid-gap: 24px;
      font-family: var(--lato);
-     position: sticky;
      top: 0;
      left: 0;
      z-index: 1000;
@@ -263,7 +260,7 @@
  .caracter {
      font-size: 13px;
      color: var(--blue);
-     margin-bottom: 13px;
+     float: right;
  }
 
  #content main .head-title .left h1 {
@@ -347,6 +344,24 @@
  }
 
 
+ .arsipt:hover {
+     background-color: var(--dark-blue);
+     color: var(--dark);
+ }
+
+ .arsipt {
+     border: none;
+     outline: none;
+     background-color: var(--blue);
+     color: #fff;
+     font-weight: 600;
+     padding: 0.5rem 2rem;
+     border-radius: 0.5rem;
+     cursor: pointer;
+     transition: 0.3s;
+ }
+
+
  /* dashboard area */
  .date-text {
      color: var(--dark-grey);
@@ -379,12 +394,9 @@
  }
 
  #content main .table-data .head {
-     display: flex;
      align-items: center;
      grid-gap: 16px;
-     margin-bottom: 24px;
      color: var(--blue);
-
  }
 
  #content main .table-data .head .heads h3 {
@@ -394,72 +406,24 @@
  }
 
  #content main .table-data .order {
-     flex-grow: 1;
-     flex-basis: 500px;
      margin-top: 20px;
+ }
+
+ .grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fill, minmax(500px, 2fr));
+     grid-gap: 20px 40px;
  }
 
  /* media query */
  @media screen and (max-width: 768px) {
-     #sidebar {
-         width: 200px;
+     .grid {
+         display: inline;
      }
-
-     #content {
-         width: calc(100% - 60px);
-         left: 200px;
-     }
-
-     #content nav .nav-link {
-         display: none;
-     }
-
  }
 
  @media screen and (max-width: 576px) {
-     #content nav form .form-input input {
-         display: none;
-     }
-
-     #content nav form .form-input button {
-         width: auto;
-         height: auto;
-         background: transparent;
-         border-radius: none;
-         color: var(--dark);
-     }
-
-     #content nav form.show .form-input input {
-         display: block;
-         width: 100%;
-     }
-
-     #content nav form.show .form-input button {
-         width: 36px;
-         height: 100%;
-         border-radius: 0 36px 36px 0;
-         color: var(--light);
-         background: var(--red);
-     }
-
-     #content nav form.show~.notification,
-     #content nav form.show~.profile {
-         display: none;
-     }
-
-     #content main .box-info {
-         grid-template-columns: 1fr;
-     }
-
-     #content main .table-data .head {
-         min-width: 420px;
-     }
-
-     #content main .table-data .order table {
-         min-width: 420px;
-     }
-
-     #content main .table-data .todo .todo-list {
-         min-width: 420px;
+     .grid {
+         display: inline;
      }
  }

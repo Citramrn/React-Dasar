@@ -13,6 +13,7 @@ class NotesApp extends React.Component {
 
         this.addContactEventSubmit = this.addContactEventSubmit.bind(this)
         this.onDeleteEventListener = this.onDeleteEventListener.bind(this)
+        this.onArchivedEventListener = this.onArchivedEventListener.bind(this)
     }
 
     onDeleteEventListener(id) {
@@ -20,8 +21,9 @@ class NotesApp extends React.Component {
         this.setState({ notes });
     }
 
-    onArsipEventListener() {
-
+    onArchivedEventListener(id) {
+        const notes = this.state.notes.map((note) => note.id === id ? { ...note, archived: !note.archived } : note)
+        this.setState({ notes })
     }
 
     addContactEventSubmit({ title, body }) {
@@ -35,36 +37,25 @@ class NotesApp extends React.Component {
                         body,
                         archived: false,
                         createdAt: this.state.notetwo,
-                    }
+                    },
                 ]
             }
         })
     }
 
     render() {
+        const nonActiveNotes = this.state.notes.filter((note) => {
+            return note.archived === false
+        });
+
+        const activeNotes = this.state.notes.filter((note) => {
+            return note.archived === true
+        });
+
         return (
             <div className='app'>
-                <div id="sidebar">
-                    <span className="brand">
-                        <i className='bx bx-note'></i> <span className="text">Notes App</span>
-                    </span>
-                    <ul className="side-menu top">
-                        <li className="active">
-                            <span>
-                                <i className='bx bx-notepad'></i> <span className="text">Catatan</span>
-                            </span>
-                        </li>
-                        <li >
-                            <span>
-                                <i className='bx bxs-file-archive'></i> <span className="text">Arsip</span>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-
                 <section id="content">
                     <nav>
-                        <i className='bx bx-menu'></i>
                         <form action="#">
                             <div className="form-input">
                                 <input type="search" placeholder="Search..." />
@@ -80,17 +71,19 @@ class NotesApp extends React.Component {
                         </div>
                         <div className="table-data">
                             <NotesInput addNote={this.addContactEventSubmit} />
-                            <div className="order">
-                                <div className="heads">
-                                    <h3>Catatan Aktif</h3>
+                            <div className="grid">
+                                <div className="order">
+                                    <div className="heads">
+                                        <h3>Catatan Aktif</h3>
+                                    </div>
+                                    <NotesList notes={nonActiveNotes} onDelete={this.onDeleteEventListener} onArchived={this.onArchivedEventListener} />
                                 </div>
-                                <NotesList notes={this.state.notes} onDelete={this.onDeleteEventListener} />
-                            </div>
-                            <div className="order">
-                                <div className="heads">
-                                    <h3>Catatan Di Arsipkan</h3>
+                                <div className="order">
+                                    <div className="heads">
+                                        <h3>Catatan Di Arsipkan</h3>
+                                    </div>
+                                    <NotesList notes={activeNotes} onDelete={this.onDeleteEventListener} onActive={this.onArchivedEventListener} />
                                 </div>
-
                             </div>
                         </div>
                     </main>

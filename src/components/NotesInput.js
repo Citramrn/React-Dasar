@@ -10,13 +10,13 @@ class NotesApp extends React.Component {
 
         this.onTitleEventListener = this.onTitleEventListener.bind(this);
         this.onBodyEventListener = this.onBodyEventListener.bind(this);
-        this.onSubmitEvent = this.onSubmitEvent.bind(this)
+        this.onSubmitEvent = this.onSubmitEvent.bind(this);
     }
 
     onBodyEventListener(event) {
         this.setState(() => {
             return {
-                body: event.target.value
+                body: event.target.value,
             }
         })
     }
@@ -31,7 +31,7 @@ class NotesApp extends React.Component {
 
     onSubmitEvent(event) {
         event.preventDefault();
-        this.props.addNote(this.state)
+        this.props.addNote(this.state);
     }
 
     render() {
@@ -43,13 +43,13 @@ class NotesApp extends React.Component {
                 <div className="form-notes-container">
                     <form id="formDataNotes" action="" method="post" name="myForm" onSubmit={this.onSubmitEvent}>
                         <div className="form-group-input">
-                            <input required type="text" value={this.state.title} name="title" id="title" maxLength='50' onChange={this.onTitleEventListener}
+                            <p className='caracter' name='word'>Karakter Kata = {50 - this.state.title.length} </p>
+                            <input required type="text" value={this.state.title} name="title" id="title" maxLength={50} onChange={this.onTitleEventListener}
                                 placeholder='title...' />
-                            <p className='caracter' name='word' >Sisa karakter : {50 - this.onTitleEventListener.length} </p>
                         </div>
                         <div className="row">
                             <div className="form-group-input">
-                                <textarea value={this.state.body} name="notes" id="notes" required placeholder='notes...' onChange={this.onBodyEventListener}></textarea>
+                                <textarea required value={this.state.body} name="notes" id="notes" placeholder='notes...' onChange={this.onBodyEventListener}></textarea>
                             </div>
                         </div>
                         <button type="submit" className="btn-submit">Save</button>
