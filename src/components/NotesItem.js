@@ -2,7 +2,7 @@ import React from 'react';
 import NotesItemBody from './NotesitemBody';
 import DeleteButton from './DeleteButton';
 import ArchivedButton from './ArchivedButton';
-import ActiveButton from './ActivButton';
+// import ActiveButton from './ActivButton';
 
 function NotesItem({ title, body, onDelete, id, onArchived, onActive }) {
     return (
@@ -11,7 +11,7 @@ function NotesItem({ title, body, onDelete, id, onArchived, onActive }) {
             <div className="action">
                 <DeleteButton id={id} onDelete={onDelete} />
                 <ArchivedButton id={id} onArchived={onArchived} />
-                <ActiveButton id={id} onActive={onActive} />
+                {/* <ActiveButton id={id} onActive={onActive} /> */}
             </div>
         </div>
     );

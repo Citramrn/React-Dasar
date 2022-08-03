@@ -82,7 +82,7 @@ class NotesApp extends React.Component {
                                     <div className="heads">
                                         <h3>Catatan Di Arsipkan</h3>
                                     </div>
-                                    <NotesList notes={activeNotes} onDelete={this.onDeleteEventListener} onActive={this.onArchivedEventListener} />
+                                    <NotesList notes={activeNotes} onDelete={this.onDeleteEventListener} onArchived={this.onArchivedEventListener} />
                                 </div>
                             </div>
                         </div>
