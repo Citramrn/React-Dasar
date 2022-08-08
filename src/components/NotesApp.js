@@ -1,19 +1,23 @@
 import React from 'react';
-import NotesList from '../components/NotesList';
-import NotesInput from '../components/NotesInput';
+import NotesList from './Body/NotesList';
+import NotesInput from './Body/NotesInput';
 import { getInitialData, showFormattedDate } from '../utils/data';
+import EmptyMessage from './Action/EmpyMessage';
+import SearchNav from './Search/NoteSearch';
 
 class NotesApp extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             notes: getInitialData(),
+            keyword: '',
             notetwo: showFormattedDate(new Date()),
         }
 
         this.addContactEventSubmit = this.addContactEventSubmit.bind(this)
         this.onDeleteEventListener = this.onDeleteEventListener.bind(this)
         this.onArchivedEventListener = this.onArchivedEventListener.bind(this)
+        this.onSearchEventHandler = this.onSearchEventHandler.bind(this)
     }
 
     onDeleteEventListener(id) {
@@ -43,6 +47,14 @@ class NotesApp extends React.Component {
         })
     }
 
+    onSearchEventHandler(keyword) {
+        this.setState(() => {
+            return {
+                keyword,
+            }
+        })
+    }
+
     render() {
         const nonActiveNotes = this.state.notes.filter((note) => {
             return note.archived === false
@@ -50,18 +62,13 @@ class NotesApp extends React.Component {
 
         const activeNotes = this.state.notes.filter((note) => {
             return note.archived === true
-        });
+        })
 
         return (
             <div className='app'>
                 <section id="content">
                     <nav>
-                        <form action="#">
-                            <div className="form-input">
-                                <input type="search" placeholder="Search..." />
-                                <button type="submit" className="search-btn"><i className='bx bx-search'></i></button>
-                            </div>
-                        </form>
+                        <SearchNav onSearch={this.onSearchEventHandler} />
                     </nav>
                     <main>
                         <div className="head-title">
@@ -76,13 +83,14 @@ class NotesApp extends React.Component {
                                     <div className="heads">
                                         <h3>Catatan Aktif</h3>
                                     </div>
-                                    <NotesList notes={nonActiveNotes} onDelete={this.onDeleteEventListener} onArchived={this.onArchivedEventListener} />
+                                    {nonActiveNotes.length > 0 ? <NotesList keyword={this.state.keyword} notes={nonActiveNotes} onDelete={this.onDeleteEventListener} onArchived={this.onArchivedEventListener} /> : <EmptyMessage />}
                                 </div>
                                 <div className="order">
                                     <div className="heads">
                                         <h3>Catatan Di Arsipkan</h3>
                                     </div>
-                                    <NotesList notes={activeNotes} onDelete={this.onDeleteEventListener} onArchived={this.onArchivedEventListener} />
+                                    {activeNotes.length > 0 ? <NotesList keyword={this.state.keyword} notes={activeNotes} onDelete={this.onDeleteEventListener} onArchived={this.onArchivedEventListener} />
+                                        : <EmptyMessage />}
                                 </div>
                             </div>
                         </div>

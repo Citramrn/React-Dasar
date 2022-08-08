@@ -10,7 +10,7 @@
      --light-blue: #CFE8FF;
      --grey: #eee;
      --dark-grey: #AAAAAA;
-     --dark: #342E37;
+     --dark: #474249;
      --red: #DB504A;
      --red-light: #ff8c88;
      --yellow: #FFCE26;
@@ -198,7 +198,11 @@
      color: var(--blue);
  }
 
- /* button search start*/
+ /* icon search start*/
+ .bx-search {
+     color: var(--dark);
+ }
+
  #content nav form {
      max-width: 400px;
      width: 100%;
@@ -221,16 +225,17 @@
      outline: none;
      width: 100%;
      color: var(--dark);
+     font-family: var(--poppins);
  }
 
 
- #content nav form .form-input button {
+ #content nav form .form-input span {
      width: 36px;
      height: 100%;
      display: flex;
      justify-content: center;
      align-items: center;
-     background: var(--blue);
+     background: var(--grey);
      color: var(--light);
      font-size: 18px;
      border: none;
@@ -239,7 +244,7 @@
      cursor: pointer;
  }
 
- /* button search end*/
+ /* icon search end*/
 
  #content main {
      width: 100%;
@@ -254,6 +259,10 @@
      justify-content: space-between;
      grid-gap: 16px;
      flex-wrap: wrap;
+ }
+
+ input::placeholder {
+     font-family: var(--poppins);
  }
 
  /* caracter */
@@ -343,7 +352,6 @@
      transition: 0.3s;
  }
 
-
  .arsipt:hover {
      background-color: var(--dark-blue);
      color: var(--dark);
@@ -415,6 +423,13 @@
      grid-gap: 20px 40px;
  }
 
+ /* empty message */
+ .empty-message {
+     color: var(--dark-grey);
+     text-align: center;
+     margin-top: 30px;
+ }
+
  /* media query */
  @media screen and (max-width: 768px) {
      .grid {
@@ -426,4 +441,19 @@
      .grid {
          display: inline;
      }
+ }
+
+ /* 
+ add messgae */
+
+ .succes-message {
+     position: fixed;
+     font-family: var(--poppins);
+     top: 1rem;
+     right: 1rem;
+     padding: 0.5rem 1rem;
+     color: #fff;
+     z-index: 100;
+     background-color: var(--blue);
+     transition: 0.5s;
  }

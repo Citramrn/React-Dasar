@@ -6,6 +6,7 @@ class NotesApp extends React.Component {
         this.state = {
             body: '',
             title: '',
+            maxLength: 50
         }
 
         this.onTitleEventListener = this.onTitleEventListener.bind(this);
@@ -24,7 +25,7 @@ class NotesApp extends React.Component {
     onTitleEventListener(event) {
         this.setState(() => {
             return {
-                title: event.target.value
+                title: event.target.value.slice(0, this.state.maxLength)
             }
         })
     }
@@ -32,6 +33,11 @@ class NotesApp extends React.Component {
     onSubmitEvent(event) {
         event.preventDefault();
         this.props.addNote(this.state);
+        this.setState({
+            title: '',
+            body: '',
+        });
+        alert('Berhasil Ditambahkan!')
     }
 
     render() {
@@ -41,10 +47,10 @@ class NotesApp extends React.Component {
                     <h3>Catatan Baru</h3>
                 </div>
                 <div className="form-notes-container">
-                    <form id="formDataNotes" action="" method="post" name="myForm" onSubmit={this.onSubmitEvent}>
+                    <form id="formDataNotes" ref="form" action="" method="post" name="myForm" onSubmit={this.onSubmitEvent}>
                         <div className="form-group-input">
-                            <p className='caracter' name='word'>Karakter Kata = {50 - this.state.title.length} </p>
-                            <input required type="text" value={this.state.title} name="title" id="title" maxLength={50} onChange={this.onTitleEventListener}
+                            <p className='caracter' name='word'>Karakter Kata = {this.state.maxLength - this.state.title.length} </p>
+                            <input required type="text" value={this.state.title} name="title" id="title" onChange={this.onTitleEventListener}
                                 placeholder='title...' />
                         </div>
                         <div className="row">
