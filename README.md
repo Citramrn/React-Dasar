@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+## Dicoding Academy Indonesia ~ Submission ### Belajar Membuat Aplikasi Web dengan React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Results:
 
-## Available Scripts
+![all-devices-white](https://i.ibb.co/LQXqp7V/all-devices-black.png)
 
-In the project directory, you can run:
+  
 
-### `npm start`
+#### Link production Netlify:  [https://notes-citra.netlify.app/](https://notes-citra.netlify.app// "Open site in a new tab")
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Features
+-   **Pengenalan React :** Berkenalan dengan React, mengetahui alasan mempelajari React, dan mengenal ekosistem yang ada di React.
+-   **Konsep Dasar React :**  Belajar tentang konsep dasar React seperti composition, declarative code, unidirectional data flow, dan menyadari bahwa React hanyalah JavaScript.
+-   **React UI Component :** Belajar tentang membangun UI di React seperti mengenal element dan component. Serta, belajar juga konsep component properti yang membuat UI aplikasi bersifat reusable.
+-   **Stateful Component :**  Belajar tentang class component, menggunakan state di dalam component, memahami dan mempraktikkan controlled component.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Clone The Repo
+```cmd
+- git clone https://github.com/Citramrn/React-Dasar
+- cd React-Dasar
+- yarn install or npm install
+```
+---
+#### Final Submission from course : 
+https://www.dicoding.com/certificates/2VX31LQJJZYQ
 
-### `npm test`
+#### My Certificate :
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![sertifikat-course-315-561525-130722083133-1](https://i.ibb.co/hFCPZb0/sertifikat-course-403-561525-090822204135-1.png)  
 
-### `npm run build`
+### Contact Info
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- WhatsApp : [+62 877 5442 1765](https://wa.me/6287754421765)
+- Email : [ctrmirna@gmail.com](mailto:ctrmirna@gmail.com)
+---
+###### tags: `ReactJs`  `Beginner`  `HTML`  `Dicoding`  `CSS`
